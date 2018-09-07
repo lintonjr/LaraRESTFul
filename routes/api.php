@@ -23,7 +23,9 @@ Route::middleware('auth:api')->prefix('v1')->group(function (){
     // Route::put('/products/{product}', 'ProductsController@update');
     // Route::get('/products/{product}', 'ProductsController@show');
     // Route::delete('/products/{product}', 'ProductsController@destroy');
-
+    Route::get('users/me', function (){
+        return request()->user();
+    });
     Route::resources([
         'products' => 'ProductsController',
         'users' => 'UsersController'
